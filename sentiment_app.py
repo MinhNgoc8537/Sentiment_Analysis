@@ -146,7 +146,7 @@ elif choice == "About Project":
     plt.title('WordCloud of Positive Class', fontsize = 16)
     plt.axis("off")
     plt.show()
-    st.pyplot(fig, width = 700)
+    st.pyplot(fig)
     
     # Neutral wordcloud
     st.write("#### Neutral")
@@ -157,7 +157,7 @@ elif choice == "About Project":
     plt.title('WordCloud of Neutral Class', fontsize = 16)
     plt.axis("off")
     plt.show()
-    st.pyplot(fig, width = 700)
+    st.pyplot(fig)
     
     # Negative wordcloud
     st.write("##### Negative")
@@ -168,7 +168,7 @@ elif choice == "About Project":
     plt.title('WordCloud of Negative Class', fontsize = 16)
     plt.axis("off")
     plt.show()
-    st.pyplot(fig, width = 700)
+    st.pyplot(fig)
     
     # Imbalance Data
     st.write("#### Resampling Imablanced Data")
@@ -181,7 +181,7 @@ elif choice == "About Project":
     plt.title('Number of Values Each Category')
     plt.xlabel('Label')
     plt.ylabel('Values')
-    st.pyplot(fig, width = 700)
+    st.pyplot(fig)
 
     st.write("##### After Resampling")
     num_cate = pd.DataFrame(df_train_balanced.label.value_counts())
@@ -192,7 +192,7 @@ elif choice == "About Project":
     plt.title('Number of Values Each Category')
     plt.xlabel('Label')
     plt.ylabel('Values')
-    st.pyplot(fig, width = 700)
+    st.pyplot(fig)
     
     
 elif choice == 'Evaluation':
