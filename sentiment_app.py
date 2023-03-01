@@ -64,7 +64,7 @@ X_train_vec = tv.transform(X_train['comment_pre'])
 X_test_vec = tv.transform(X_test['comment_pre'])
 
 # Evaluate model
-model = pickle.load(open('ML_SentimentAnaLysis_Model.pkl', 'rb'))
+model = pickle.load(open('ML_SentimentAnalysis_Model.pkl', 'rb'))
 y_pred = model.predict(X_test_vec)
 accuracy = accuracy_score(y_test, y_pred)
 score_train = model.score(X_train_vec, y_train)
