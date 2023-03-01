@@ -9,3 +9,6 @@ scikit-learn
 yellowbrick
 Pillow
 wordcloud
+underthesea
+demoji
+pyvi
