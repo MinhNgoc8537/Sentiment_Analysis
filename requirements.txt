@@ -1,0 +1,9 @@
+streamlit
+streamlit_yellowbrick
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+yellowbrick
+Pillow
