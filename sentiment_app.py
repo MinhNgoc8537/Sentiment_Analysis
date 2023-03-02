@@ -51,12 +51,9 @@ df_train_balanced = pd.concat([data_positive_resample, data_neutral_resample, da
 # Encode data
 df_train_balanced['encoded_label'] = df_train_balanced['label'].apply(lambda x: 1 if x == 'Positive' else 2 if x == 'Neutral' else 3 )
 df_test['encoded_label'] = df_test['label'].apply(lambda x: 1 if x == 'Positive' else 2 if x == 'Neutral' else 3 )
-df_train_balanced.drop('label', axis = 1, inplace = True)
-df_test.drop('label', axis = 1, inplace = True)
-
 # Split Data
-X_train, y_train = df_train_balanced.drop('encoded_label', axis = 1), df_train_balanced['encoded_label']
-X_test, y_test = df_test.drop('encoded_label', axis = 1), df_test['encoded_label']
+X_train, y_train = df_train_balanced.drop(['label','encoded_label'], axis = 1), df_train_balanced['encoded_label']
+X_test, y_test = df_test.drop(['label','encoded_label'], axis = 1), df_test['encoded_label']
 
 # TFIDF
 tv = pickle.load(open("ML_TFIDF.pkl", "rb"))
