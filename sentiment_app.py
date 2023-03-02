@@ -254,7 +254,6 @@ elif choice == "Prediction":
     lines = None
     option = st.selectbox("",options = ("Input A Comment", "Upload A File"))
     if option == "Input A Comment":
-        st.write("Your Selected: ", option)
         comment = st.text_area("Type Your Comment: ")
         if comment != "":
             comment_pre = preprocessing_comment(comment)
@@ -274,7 +273,6 @@ elif choice == "Prediction":
                 negative = negative.resize((600,600))
                 st.image(negative, width = 700)
     if option == "Upload A File":
-        st.write("Your Selected: ", option)
         # Upload file
         uploaded_file_1 = st.file_uploader("Choose a file", type=['txt', 'csv'])
         if uploaded_file_1 is not None:
