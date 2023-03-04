@@ -283,7 +283,7 @@ elif choice == "Prediction":
             x_new = tv.transform(lines)        
             y_pred_new = model.predict(x_new)
             df['prediction'] = y_pred_new
-            st.write("###1: Positive, 2:Neutral, 3: Negative")
+            st.write("### 1: Positive, 2: Neutral, 3: Negative")
             st.dataframe(df[[0,'prediction']])
 
         
