@@ -255,8 +255,8 @@ elif choice == "Prediction":
     option = st.selectbox("",options = ("Input A Comment", "Upload A File"))
     if option == "Input A Comment":
         comment = st.text_area("Type Your Comment: ")
-        st.code("Your comment: ",comment)
         if comment != "":
+            st.code("Your comment: ",comment)
             comment_pre = preprocessing_comment(comment)
             lines = np.array([comment_pre])
             tfidf_comment = tv.transform(lines)
