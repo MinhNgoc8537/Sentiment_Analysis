@@ -278,13 +278,13 @@ elif choice == "Prediction":
         if uploaded_file_1 is not None:
             df = pd.read_csv(uploaded_file_1, header = None)
             df = df.iloc[1:,:]
-            st.dataframe(df)
+            st.dataframe(df[0])
             lines = df[0].apply(lambda x: preprocessing_comment(x))
-            st.dataframe(lines)
             x_new = tv.transform(lines)        
             y_pred_new = model.predict(x_new)
             df['prediction'] = y_pred_new
-            st.dataframe(df)
+            st.write("### 1: Positive, 2:Neutral, 3: Negative")
+            st.dataframe(df[[0,'prediction']])
 
         
 
