@@ -255,6 +255,7 @@ elif choice == "Prediction":
     option = st.selectbox("",options = ("Input A Comment", "Upload A File"))
     if option == "Input A Comment":
         comment = st.text_area("Type Your Comment: ")
+        st.code("Your comment: ",comment)
         if comment != "":
             comment_pre = preprocessing_comment(comment)
             lines = np.array([comment_pre])
@@ -278,6 +279,7 @@ elif choice == "Prediction":
         if uploaded_file_1 is not None:
             df = pd.read_csv(uploaded_file_1, header = None)
             df = df.iloc[1:,:]
+            st.write("Your DataFrame:")
             st.dataframe(df[0])
             lines = df[0].apply(lambda x: preprocessing_comment(x))
             x_new = tv.transform(lines)        
