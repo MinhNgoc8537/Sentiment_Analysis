@@ -284,9 +284,10 @@ elif choice == "Prediction":
             x_new = tv.transform(lines)        
             y_pred_new = model.predict(x_new)
             df['prediction'] = y_pred_new
+            df['prediction'] = df['prediction'].apply(lambda x: "Positive" if x == 1 else "Neutral" if x == 2 else "Negative")
             st.write("### Prediction:")
-            st.write("#### 1: Positive, 2: Neutral, 3: Negative")
-            st.dataframe(df[[0,'prediction']])
+            df.columns = ['Comment', 'Rating', 'Prediction']
+            st.dataframe(df)
 
         
 
